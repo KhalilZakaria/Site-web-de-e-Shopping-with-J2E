@@ -30,12 +30,12 @@ public class AddProduct extends HttpServlet {
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
 		try {
-		//connexion à ma bd
+		//connexion Ã  ma bd
 		String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String driver = "com.mysql.jdbc.Driver";
 		Class.forName(driver).newInstance();
 		Connection con;
-		con=DriverManager.getConnection(url,"root","Zakaria@1999");
+		con=DriverManager.getConnection(url,"root","Zak1998");
 		PreparedStatement stmt=con.prepareStatement("select * from suggestions;");
 		ResultSet resultats = stmt.executeQuery();
 		//compter le nombre des suggestions (pending) disponible
@@ -45,7 +45,7 @@ public class AddProduct extends HttpServlet {
 		}
 		
 		//out.println("Nbr de lignes : "+CountRows);
-		//récupérer le produitt selectionné
+		//rÃ©cupÃ©rer le produitt selectionnÃ©
 		String OurValue="";
 		int j=1;
 		while(true) {
@@ -66,7 +66,7 @@ public class AddProduct extends HttpServlet {
 		String button = request.getParameter(OurValue);
 		if ( button.equalsIgnoreCase("Accepter") )
 			{out.println("C'est modifier");
-			//ajouter l'id de la suggestion selectionnée puis aller vers la jsp Accepter
+			//ajouter l'id de la suggestion selectionnÃ©e puis aller vers la jsp Accepter
 			HttpSession session = request.getSession();
 			session.setAttribute("idsuggestion",OurValue);
 			res.sendRedirect("Accepter.jsp");
@@ -74,7 +74,7 @@ public class AddProduct extends HttpServlet {
 			// Si c'est supprimer
 		if ( button.equalsIgnoreCase("X") )
 			{out.println("C'est supprimer");
-			//supprimer directement de la base de donnée
+			//supprimer directement de la base de donnÃ©e
 			stmt2=con.prepareStatement("DELETE FROM suggestions WHERE suggestionID =?");
 			stmt2.setString(1,OurValue);
 			stmt2.executeUpdate();
