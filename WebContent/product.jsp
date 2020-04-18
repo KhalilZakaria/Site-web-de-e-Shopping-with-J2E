@@ -6,7 +6,7 @@
 <% String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select * from produits where ProduitID=?;");
 String CurrentProduct =  request.getParameter("productID");
 stmt.setString(1,CurrentProduct);
@@ -52,7 +52,7 @@ ResultSet resultats = stmt.executeQuery();
 		}
 		else {
 			%><a>Bonjour <%=prenom %></a> 
-			<a href=''>Déconenxion</a>
+			<a href=''>DÃ©conenxion</a>
 			<% 
 		}
 		
@@ -69,7 +69,7 @@ ResultSet resultats = stmt.executeQuery();
         <ul> 
            <li><a href="Panier.jsp"><i class="fas fa-shopping-cart"></i> Shop</a></li>
             <li><a href="Commandes.jsp"><li><i class="fas fa-shopping-basket"></i> Mes Commandes</a></li>
-            <li><a href="Suggerer.jsp"><li><i class="fas fa-lightbulb"></i> Suggérer</a></li>
+            <li><a href="Suggerer.jsp"><li><i class="fas fa-lightbulb"></i> SuggÃ©rer</a></li>
           </ul>
     </div>
 </div>
@@ -88,7 +88,7 @@ while (encore) { %>
 <hr style='height: 1px;background-color: #0e8ce4;border:none'><br><br>
 <p style='font-size:20px;font-family:sans serif;'><%=resultats.getString(6)%><br><br>
 <p style='font-weight:bold;font-size:20px;font-family:sans serif;'>Price : <span id='prix'style='font-weight:bold;font-size:20px;font-family:sans serif;color:#0e8ce4'><%=resultats.getString(4)%></span></p><br>
-<label style='font-weight:bold;font-size:20px;font-family:sans serif;'>Quantité :</label>
+<label style='font-weight:bold;font-size:20px;font-family:sans serif;'>QuantitÃ© :</label>
           <form method='POST' action="AddToCartPath?productID=<%=CurrentProduct%>">   <input id='input'style='font-size:15px;padding:6px;line-height:30px;border: 1px solid #0e8ce4;border-radius:4px;' placeholder='0' type='number' name='quantite'><br><br>
            <button class='submit-btn' name="AddPanier" type='submit' >Ajouter au panier </button></form>
 <% encore = resultats.next(); } %>
@@ -145,7 +145,7 @@ encore1 = resultats2.next(); } %>
 					<a href="#">Contact</a>
 				</p>
 
-				<p class="footer-company-name">Les Quatres © 2020</p>
+				<p class="footer-company-name">Les Quatres Â© 2020</p>
 			</div>
 
 			<div class="footer-center">
@@ -170,7 +170,7 @@ encore1 = resultats2.next(); } %>
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-					<span>à Propos</span>
+					<span>Ã  Propos</span>
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
 
