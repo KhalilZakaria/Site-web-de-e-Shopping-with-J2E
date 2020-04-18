@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/webapp_2_4.xsd" version="2.4">
+
+	<servlet>
+	<servlet-name>InsertionServlet</servlet-name>
+	<servlet-class>Insertion</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>ConnexionServlet</servlet-name>
+	<servlet-class>Connexion</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>AddClientServlet</servlet-name>
+	<servlet-class>AddClient</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>ModifyServlet</servlet-name>
+	<servlet-class>Modify</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>AddToCartServlet</servlet-name>
+	<servlet-class>AddToCart</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>FinaliserServlet</servlet-name>
+	<servlet-class>Finaliser</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>DeconnexionServlet</servlet-name>
+	<servlet-class>Deconnexion</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>AddProductServlet</servlet-name>
+	<servlet-class>AddProduct</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>AjouterProduitServlet</servlet-name>
+	<servlet-class>AjouterProduit</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>addSuggestionServlet</servlet-name>
+	<servlet-class>addSuggestion</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>addCommentServlet</servlet-name>
+	<servlet-class>addComment</servlet-class>
+	</servlet>
+	
+<servlet-mapping>
+<servlet-name>InsertionServlet</servlet-name>
+<url-pattern>/insertionPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>ConnexionServlet</servlet-name>
+<url-pattern>/ConnexionPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>AddClientServlet</servlet-name>
+<url-pattern>/AddClientPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>ModifyServlet</servlet-name>
+<url-pattern>/ModifyPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>AddToCartServlet</servlet-name>
+<url-pattern>/AddToCartPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>FinaliserServlet</servlet-name>
+<url-pattern>/FinaliserPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>DeconnexionServlet</servlet-name>
+<url-pattern>/DeconnexionPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>AddProductServlet</servlet-name>
+<url-pattern>/AddProductPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>AjouterProduitServlet</servlet-name>
+<url-pattern>/AjouterProduitPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>addSuggestionServlet</servlet-name>
+<url-pattern>/addSuggestionPath</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>addCommentServlet</servlet-name>
+<url-pattern>/addCommentPath</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+<welcome-file>accueil.html</welcome-file>
+</welcome-file-list>
+
+</web-app>
