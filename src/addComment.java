@@ -29,10 +29,10 @@ public class addComment extends HttpServlet {
 		// TODO Auto-generated method stub
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
-		//la valeur où nous allons stocker l'id de l'utilisateur
+		//la valeur oÃ¹ nous allons stocker l'id de l'utilisateur
 		 int Currentid=0;
 	    
-	     //récuperation de la session
+	     //rÃ©cuperation de la session
 			HttpSession sess = request.getSession();
 			if ((int) sess.getAttribute("Currentid") != 0) {
 				Currentid = (int) sess.getAttribute("Currentid");
@@ -58,22 +58,22 @@ public class addComment extends HttpServlet {
 		
 		
 		try {
-		//connexion à la base de donnée
+		//connexion Ã  la base de donnÃ©e
 			String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String driver = "com.mysql.jdbc.Driver";
 			Class.forName(driver).newInstance();
 			Connection con;
-			con=DriverManager.getConnection(url,"root","Zakaria@1999");
+			con=DriverManager.getConnection(url,"root","Zak1998");
 			PreparedStatement stmt=con.prepareStatement("select OrderID,Nom_Produit,commentaire from produits,commandes where ProduitID=ProductID and personID=?");
 			stmt.setInt(1,Currentid);
 			ResultSet resultats = stmt.executeQuery();
 			PreparedStatement stmt2=con.prepareStatement("UPDATE commandes SET commentaire=? WHERE OrderID=?");
 			boolean encore = resultats.next();
-			//parcourir la liste des orders et leurs commentaies associés
+			//parcourir la liste des orders et leurs commentaies associÃ©s
 			int CurrentOrder  = 0;
 			String CurrentComment= "";
 		  while (encore) { 
-			  //executer l'instruction à chaque fois les valeurs sont mises à jour
+			  //executer l'instruction Ã  chaque fois les valeurs sont mises Ã  jour
 			  CurrentOrder=resultats.getInt(1);
 			  CurrentComment = request.getParameter(Integer.toString(resultats.getInt(1)));
 			  stmt2.setString(1,CurrentComment);
