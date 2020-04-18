@@ -11,7 +11,7 @@
 <% String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select * from personnes where id=?;");
 stmt.setString(1,id);
 ResultSet resultats = stmt.executeQuery();
@@ -44,6 +44,6 @@ resultats.close();
 stmt.close();
 con.close();
 %>
-<a href="accueil.html"> retour à la page d'accueil </a>
+<a href="accueil.html"> retour Ã  la page d'accueil </a>
 </body>
 </html>
