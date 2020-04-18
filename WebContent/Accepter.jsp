@@ -11,7 +11,7 @@
 <% String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select * from suggestions where suggestionID=?;");
 stmt.setString(1,id);
 ResultSet resultats = stmt.executeQuery();
@@ -187,7 +187,7 @@ while (encore) { %>
 		</div>
 		
 		<div id="name">
-		<h2 class="name">Catégorie</h2>
+		<h2 class="name">CatÃ©gorie</h2>
 		<input class="firstname" type="text" name="catP" value="<%=resultats.getString(3)%>" ><br>
 		</div>
 		
