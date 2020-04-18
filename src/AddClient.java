@@ -9,17 +9,17 @@ public class AddClient extends HttpServlet {
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
 			try {
-				//récupération des données
+				//rÃ©cupÃ©ration des donnÃ©es
 				String fnom=req.getParameter("nom");
 				String fprenom=req.getParameter("prenom");
 				String femail=req.getParameter("email");
 				String fpassword=req.getParameter("mdp");
-				//Connexion à la base de données
+				//Connexion Ã  la base de donnÃ©es
 				String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 				String driver = "com.mysql.jdbc.Driver";
 				Class.forName(driver).newInstance();
 				Connection con;
-				con=DriverManager.getConnection(url,"root","Zakaria@1999");
+				con=DriverManager.getConnection(url,"root","Zak1998");
 				PreparedStatement stmt=con.prepareStatement("insert into personnes(nom,prenom,email,password,isAdmin) values (?,?,?,?,?)");
 				//afectation des valeurs
 				stmt.setString(1,fnom);
