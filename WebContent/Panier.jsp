@@ -9,7 +9,7 @@
 String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select ProduitID,Nom_Produit,Categorie,Prix,image_uri,description,quantite from produits,panier where ProduitID=ProductID and personID=?");
 
 %>
@@ -56,7 +56,7 @@ PreparedStatement stmt=con.prepareStatement("select ProduitID,Nom_Produit,Catego
 		}
 		else { 
 			%><a>Bonjour <%=prenom %></a> 
-			<a href=''>Déconnexion</a>
+			<a href=''>DÃ©connexion</a>
 			<% 
 		}
 		
@@ -75,7 +75,7 @@ PreparedStatement stmt=con.prepareStatement("select ProduitID,Nom_Produit,Catego
             <li><a href="index.jsp"><i class="fas fa-home"></i> Acceuil</a></li>
             <li><a href="Panier.jsp"><i class="fas fa-shopping-cart"></i> Shop</a></li>
             <a href="Commandes.jsp"><li><i class="fas fa-shopping-basket"></i>Mes Commandes</a></li>
-               <a href="Suggerer.jsp"><li><i class="fas fa-lightbulb"></i> Suggérer</a></li>
+               <a href="Suggerer.jsp"><li><i class="fas fa-lightbulb"></i> SuggÃ©rer</a></li>
           </ul>
     </div>
 </div>
@@ -101,7 +101,7 @@ PreparedStatement stmt=con.prepareStatement("select ProduitID,Nom_Produit,Catego
 							</div>
 						
 							<div class="cell">
-								Quantité
+								QuantitÃ©
 							</div>
 							
 						</div>
@@ -182,7 +182,7 @@ Somme=Somme + Double.valueOf(resultats.getString(4) )*  Double.valueOf(resultats
 					<a href="#">Contact</a>
 				</p>
 
-				<p class="footer-company-name">Les Quatres © 2020</p>
+				<p class="footer-company-name">Les Quatres Â© 2020</p>
 			</div>
 
 			<div class="footer-center">
@@ -207,7 +207,7 @@ Somme=Somme + Double.valueOf(resultats.getString(4) )*  Double.valueOf(resultats
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-					<span>à Propos</span>
+					<span>Ã  Propos</span>
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
 
