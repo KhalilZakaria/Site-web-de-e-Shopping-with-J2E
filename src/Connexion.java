@@ -9,15 +9,15 @@ import javax.servlet.http.HttpSession;
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
 			try {
-				//récupération du mail et mdp
+				//rÃ©cupÃ©ration du mail et mdp
 			String femail=req.getParameter("email");
 			String fpassword=req.getParameter("mdp");
-			//connexion à la bd
+			//connexion Ã  la bd
 			String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String driver = "com.mysql.jdbc.Driver";
 			Class.forName(driver).newInstance();
 			Connection con;
-			con=DriverManager.getConnection(url,"root","Zakaria@1999");
+			con=DriverManager.getConnection(url,"root","Zak1998");
 			PreparedStatement stmt=con.prepareStatement("select * from personnes where email=? and password=? ");
 			stmt.setString(1,femail);
 			stmt.setString(2,fpassword);
@@ -38,7 +38,7 @@ import javax.servlet.http.HttpSession;
 				}
 				else{	
 					//sinon c'est un client
-					out.println("Vous êtes notre cher client !");
+					out.println("Vous Ãªtes notre cher client !");
 					HttpSession session = req.getSession();
 					session.setAttribute("Currentid",resultats.getInt(1));
 					session.setAttribute("nom",resultats.getString(2));
