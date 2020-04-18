@@ -24,7 +24,7 @@ public class Delete extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    //en fait cette classe va d'abord détécter si c'est modifier ou supprimer
+    //en fait cette classe va d'abord dÃ©tÃ©cter si c'est modifier ou supprimer
 	protected void doPost(HttpServletRequest request, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		res.setContentType("text/html");
@@ -35,7 +35,7 @@ public class Delete extends HttpServlet {
 		String driver = "com.mysql.jdbc.Driver";
 		Class.forName(driver).newInstance();
 		Connection con;
-		con=DriverManager.getConnection(url,"root","Zakaria@1999");
+		con=DriverManager.getConnection(url,"root","Zak1998");
 		//selection de tt les utilisateurs
 		PreparedStatement stmt=con.prepareStatement("select * from personnes;");
 		ResultSet resultats = stmt.executeQuery();
@@ -48,7 +48,7 @@ public class Delete extends HttpServlet {
 		out.println("Nbr de lignes : "+CountRows);
 		String OurValue="";
 		int j=1;
-		//detection de la valeur de l'utilisateur selectionné
+		//detection de la valeur de l'utilisateur selectionnÃ©
 		while(true) {
 			String test = String.valueOf(j); 
 			  if (request.getParameter(test) != null) {
@@ -65,10 +65,10 @@ public class Delete extends HttpServlet {
 		String edit = request.getParameter("Modifier");
 		PreparedStatement stmt2;
 		String button = request.getParameter(OurValue);
-		//detection de la valeur du button selectionné
+		//detection de la valeur du button selectionnÃ©
 		if ( button.equalsIgnoreCase("Modifier") )
 			{out.println("C'est modifier");
-			//ajout à la session et envoie vers modify.jsp
+			//ajout Ã  la session et envoie vers modify.jsp
 			HttpSession session = request.getSession();
 			session.setAttribute("id",OurValue);
 			res.sendRedirect("modify.jsp");
