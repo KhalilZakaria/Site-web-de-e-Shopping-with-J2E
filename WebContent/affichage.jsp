@@ -3,7 +3,7 @@
 <% String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select * from personnes;");
 ResultSet resultats = stmt.executeQuery();
 
@@ -19,7 +19,7 @@ ResultSet resultats = stmt.executeQuery();
 <br/><br/>
 <form method="post" action="Delete">
 <table border="1">
-<tr><td>Id</td><td>Nom</td><td>Prénom</td><td>email</td><td>password</td><td>isAdmin</td>
+<tr><td>Id</td><td>Nom</td><td>PrÃ©nom</td><td>email</td><td>password</td><td>isAdmin</td>
 <% boolean encore = resultats.next();
 while (encore) { %>
 <tr>
@@ -38,6 +38,6 @@ resultats.close();
 stmt.close();
 con.close();
 %>
-<a href="accueil.html"> retour à la page d'accueil </a>
+<a href="accueil.html"> retour Ã  la page d'accueil </a>
 </body>
 </html>
