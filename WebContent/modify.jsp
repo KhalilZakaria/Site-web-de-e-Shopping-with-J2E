@@ -11,7 +11,7 @@
 <% String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String driver = "com.mysql.jdbc.Driver";
 Class.forName(driver).newInstance();
-Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+Connection con=DriverManager.getConnection(url,"root","Zak1998");
 PreparedStatement stmt=con.prepareStatement("select * from personnes where id=?;");
 stmt.setString(1,id);
 ResultSet resultats = stmt.executeQuery();
@@ -174,7 +174,7 @@ while (encore) { %>
 		<div id="name">
 		<h2 class="name">Nom Complet</h2>
 		<input class="firstname" type="text" name="nom" value="<%=resultats.getString(2)%>" ><br>
-		<label class="firstlabel">Prénom </label>
+		<label class="firstlabel">PrÃ©nom </label>
 		<input class="lastname" type="text" name="prenom"  value="<%=resultats.getString(3)%>"><br>
 		<label class="lastlabel">Nom </label>
 		</div>
