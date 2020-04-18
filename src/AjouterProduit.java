@@ -12,25 +12,25 @@ import javax.servlet.http.HttpSession;
 			
 			String idSuggestion = "";
 			
-			//récuperer depuis la session id de la suggestion selectionnée
+			//rÃ©cuperer depuis la session id de la suggestion selectionnÃ©e
 			if ((String) session.getAttribute("idsuggestion") != null) {
 			
 				idSuggestion= (String) session.getAttribute("idsuggestion");
 			}
 				try {
-					//récupération des paramètres depuis le formulaire
+					//rÃ©cupÃ©ration des paramÃ¨tres depuis le formulaire
 					String fnom=req.getParameter("nomP");
 					String fcategorie=req.getParameter("catP");
 					String furl=req.getParameter("imageUrl");
 					String fdesc=req.getParameter("imageD");
 					String fprix=req.getParameter("prixP");
-					//connexion à la bd
+					//connexion Ã  la bd
 					String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 					String driver = "com.mysql.jdbc.Driver";
 					Class.forName(driver).newInstance();
 					Connection con;
-					con=DriverManager.getConnection(url,"root","Zakaria@1999");
-					//ajout à la table poduit
+					con=DriverManager.getConnection(url,"root","Zak1998");
+					//ajout Ã  la table poduit
 					PreparedStatement stmt=con.prepareStatement("insert into produits(Nom_produit,Categorie,Prix,image_uri,description) values(?,?,?,?,?);");
 					stmt.setString(1,fnom);
 					stmt.setString(2,fcategorie);
