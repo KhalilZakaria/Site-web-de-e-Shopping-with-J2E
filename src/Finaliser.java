@@ -9,13 +9,13 @@ res.setContentType("text/html");
 PrintWriter out = res.getWriter();
 try {
 
-	//connecton à la bd
+	//connecton Ã  la bd
 	String url="jdbc:mysql://localhost/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	String driver = "com.mysql.jdbc.Driver";
 	Class.forName(driver).newInstance();
-	Connection con=DriverManager.getConnection(url,"root","Zakaria@1999");
+	Connection con=DriverManager.getConnection(url,"root","Zak1998");
 	PreparedStatement stmt=con.prepareStatement("select ProduitID,quantite from produits,panier where ProduitID=ProductID and personID=?");
-	  //recupération de l'id du personnes connécté courant
+	  //recupÃ©ration de l'id du personnes connÃ©ctÃ© courant
 	int Currentid=0;
 			HttpSession sess = req.getSession();
 			if ((int) sess.getAttribute("Currentid") != 0) {
@@ -27,7 +27,7 @@ try {
 	
 	boolean encore = resultats.next();	
 	PreparedStatement stmt1=null;;
-	//parcours , normalement il n'ya q une seule résultat
+	//parcours , normalement il n'ya q une seule rÃ©sultat
 	while (encore) { 
 		
 		stmt1=con.prepareStatement("insert into commandes(PersonID,ProductID,quantite) values (?,?,?)");
