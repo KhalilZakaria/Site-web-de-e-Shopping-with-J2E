@@ -10,24 +10,24 @@ public class Modify extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 			try {
-				//récpération des valeurs
+				//rÃ©cpÃ©ration des valeurs
 				String fnom=req.getParameter("nom");
 				String fprenom=req.getParameter("prenom");
 				String femail=req.getParameter("email");
 				String fpassword=req.getParameter("mdp");
 				String id = "";
-				//récupération de l'id de l'utilsateur selectionné
+				//rÃ©cupÃ©ration de l'id de l'utilsateur selectionnÃ©
 				HttpSession sess = req.getSession();
 				if ((String) sess.getAttribute("id") != null) {
 				
 					id = (String) sess.getAttribute("id");
 				}
-				//connexion à la d
+				//connexion Ã  la d
 				String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 				String driver = "com.mysql.jdbc.Driver";
 				Class.forName(driver).newInstance();
 				Connection con;
-				con=DriverManager.getConnection(url,"root","Zakaria@1999");
+				con=DriverManager.getConnection(url,"root","Zak1998");
 				//UPDATE operation
 				PreparedStatement stmt=con.prepareStatement("UPDATE personnes SET nom=?,prenom=?,email=?,password=? WHERE id=?");
 				stmt.setString(1,fnom);
