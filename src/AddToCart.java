@@ -9,7 +9,7 @@ public class AddToCart extends HttpServlet {
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
 		try {
-			//récupere les valeurs
+			//rÃ©cupere les valeurs
 			String fQuantite=req.getParameter("quantite");
 			String CurrentProduct =  req.getParameter("productID");
 			//id de l'utilisateur courant
@@ -19,12 +19,12 @@ public class AddToCart extends HttpServlet {
 				Currentid = (int) sess.getAttribute("Currentid");
 			}
 			
-			//connexion à la bd
+			//connexion Ã  la bd
 			String url="jdbc:mysql://localhost:3306/mini_projet?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			String driver = "com.mysql.jdbc.Driver";
 			Class.forName(driver).newInstance();
 			Connection con;
-			con=DriverManager.getConnection(url,"root","Zakaria@1999");
+			con=DriverManager.getConnection(url,"root","Zak1998");
 			//executer la requete
 			PreparedStatement stmt=con.prepareStatement("insert into panier(productID,personID,Quantite) values (?,?,?)");
 			stmt.setString(1,CurrentProduct);
